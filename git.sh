@@ -1,5 +1,3 @@
-msg = $msg
-repo = $repo
-branch = $branch
 
-git add * && git commit -m '$msg' && git push $repo $branch 
+
+git add * && git commit -m $1 && git push $2 $3
