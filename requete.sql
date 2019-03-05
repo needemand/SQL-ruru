@@ -58,8 +58,11 @@ SELECT jeux_video.possesseur, Count(possesseur) FROM jeux_video GROUP BY jeux_vi
    -- Afficher les jeux qui contiennent la lettre "x" dans leur nom
 SELECT jeux_video.nom FROM jeux_video WHERE nom LIKE '%x%'
    -- Afficher les jeux qui commence par "fi"
-SELECT jeux_video.nom FROM jeux_video WHERE nom LIKE '%fi'
+SELECT jeux_video.nom FROM jeux_video WHERE nom LIKE 'fi%'
 
    -- Repondre à la question : "Quels sont les personnes qui possèdent les jeux qui commence par "fi" ?"
+SELECT jeux_video.possesseur, COUNT(possesseur) FROM jeux_video WHERE nom LIKE 'fi%' GROUP BY jeux_video.possesseur 
 
    -- Repondre à la question : "Combien Corentin a t il de console ?"
+
+SELECT COUNT(jeux_video.console), jeux_video.possesseur FROM jeux_video WHERE possesseur = 'Corentin' GROUP BY( jeux_video.possesseur) 
